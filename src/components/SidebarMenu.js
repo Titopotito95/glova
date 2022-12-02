@@ -1,18 +1,21 @@
+import { useNavigation } from "@react-navigation/native";
 import { Avatar, Divider, Text } from "@ui-kitten/components";
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
 import Entypo from "react-native-vector-icons/Entypo";
+import { SCREEN_USER_PROFILE } from "../utils/screens-path";
 import { MenuIcon } from "./MenuIcon";
 
 export default function SidebarMenu() {
   let menuList = [
     {
-      title: "My Orders",
-      icon: <MenuIcon name="basket-outline" />,
+      title: "My Profile",
+      icon: <MenuIcon name="information-circle-outline" />,
+      screen: SCREEN_USER_PROFILE,
     },
     {
-      title: "My Informations",
-      icon: <MenuIcon name="information-circle-outline" />,
+      title: "My Orders",
+      icon: <MenuIcon name="basket-outline" />,
     },
     {
       title: "Promocodes",
@@ -35,6 +38,8 @@ export default function SidebarMenu() {
       icon: <MenuIcon name="ios-exit-outline" />,
     },
   ];
+
+  const navigation = useNavigation();
   return (
     <View style={{ height: "100%", padding: 10, paddingTop: 40 }}>
       <View style={{ flexDirection: "row" }}>
@@ -58,7 +63,12 @@ export default function SidebarMenu() {
       <View>
         {menuList.map((menu, index) => {
           return (
-            <TouchableOpacity key={index}>
+            <TouchableOpacity
+              onPress={() =>
+                menu?.screen ? navigation.navigate(menu?.screen) : null
+              }
+              key={index}
+            >
               <View
                 style={{
                   marginVertical: 5,

@@ -5,7 +5,8 @@ import HomeScreen from "../screens/Home";
 import SidebarMenu from "../components/SidebarMenu";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MainAppNavigation from "./MainAppNavigation";
-import { SCREEN_MAIN_APP } from "../utils/screens-path";
+import { SCREEN_MAIN_APP, SCREEN_USER_PROFILE } from "../utils/screens-path";
+import ProfileScreen from "../screens/Profile";
 const Drawer = createDrawerNavigator();
 
 export default function AppNavigation() {

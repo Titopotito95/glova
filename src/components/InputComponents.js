@@ -12,13 +12,34 @@ export const TextInput = ({ placeholder }) => {
   );
 };
 
+export const TextAreaInput = ({ placeholder }) => {
+  return (
+    <Input
+      style={{ ...styles.textArea }}
+      placeholder={placeholder}
+      textStyle={styles.textAreaStyle}
+      multiline
+    />
+  );
+};
 const styles = StyleSheet.create({
   textInput: {
     marginVertical: 10,
     backgroundColor: "white",
-    borderRadius: 100,
-    borderColor: brandColor.primaryColor,
+    borderRadius: 20,
+    borderColor: "#FDD8D8",
     borderWidth: 2,
+  },
+  textArea: {
+    marginVertical: 10,
+    backgroundColor: "white",
+    borderRadius: 20,
+    borderColor: "#FDD8D8",
+    borderWidth: 2,
+  },
+  textAreaStyle: {
+    paddingVertical: 10,
+    minHeight: 100,
   },
   textInputStyle: {
     paddingVertical: 10,
