@@ -10,7 +10,6 @@ export default function SocialButtons() {
       icon: <FontAwsome color={"#DB4437"} size={30} name="google-plus" />,
       color: "#DB4437",
     },
-
     {
       icon: <FontAwsome size={30} name="apple" />,
       color: "black",

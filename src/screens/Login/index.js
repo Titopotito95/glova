@@ -8,14 +8,14 @@ import ContainerWrapper from "../../components/utils/ContainerWrapper";
 
 export default function LoginIndex() {
   return (
-    <View
-      style={{
-        // backgroundColor: "#e5e8f1",
-        height: "100%",
-        paddingTop: 10,
-      }}
-    >
-      <ContainerWrapper>
+    <ContainerWrapper>
+      <View
+        style={{
+        //   backgroundColor: "#e5e8f1",
+          height: "100%",
+          paddingTop: 10,
+        }}
+      >
         <View style={styles.loginWrapper}>
           <Text
             category="h6"
@@ -67,8 +67,8 @@ export default function LoginIndex() {
         <View style={styles.loginWrapper}>
           <SocialButtons />
         </View>
-      </ContainerWrapper>
-    </View>
+      </View>
+    </ContainerWrapper>
   );
 }
 

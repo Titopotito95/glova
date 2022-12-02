@@ -1,12 +1,12 @@
-import { Layout } from "@ui-kitten/components";
 import React from "react";
 import { View } from "react-native";
 
-export default function ContainerWrapper({ children }) {
+export default function SpacingWrapper({ children, marginVertical, styles }) {
   return (
     <View
       style={{
-        paddingHorizontal: 2,
+        marginVertical: marginVertical ?? 10,
+        ...styles,
       }}
     >
       {children}

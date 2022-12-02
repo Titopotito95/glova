@@ -1,0 +1,32 @@
+[
+  {
+    "text": "Burgur",
+    "img": "https://www.dairyqueen.com/dA/5fc4b39d2e/fileAsset/BaconTwoCheeseDuo.png",
+    "price": "30.99",
+    "kind": "Cheezy Pizza"
+  },
+  {
+    "text": "Pizza",
+    "img": "https://gustopizz.fr/wp-content/uploads/2021/10/FORESTIERE-300x225.png",
+    "price": "50.99",
+    "kind": "Cheezy Pizza"
+  },
+  {
+    "text": "Drinks",
+    "img": "https://www.drinkbai.com/wp-content/themes/bai/images/homepage/bai-boost/bottle_bai-boost-group-new.png",
+    "price": "20.99",
+    "kind": "Cheezy Pizza"
+  },
+  {
+    "text": "Coffee",
+    "img": "https://www.saq.com/media/catalog/product/c/a/cafe-bresilien-ec-1_1610403047.png?quality=80&fit=bounds&height=&width=",
+    "price": "10.99",
+    "kind": "Cheezy Pizza"
+  },
+  {
+    "text": "Fries",
+    "img": "https://www.wendys.com/sites/default/files/styles/max_650x650/public/2021-05/fries-165_medium_US_en.png?itok=AziyAkJG",
+    "price": "15.99",
+    "kind": "Cheezy Pizza"
+  }
+]

@@ -3,8 +3,8 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 // Primary Button
-export const PrimaryButton = ({ text }) => {
-  return <Button style={styles.basic}>{text}</Button>;
+export const PrimaryButton = ({ text, btnstyles , onPress}) => {
+  return <Button onPress={onPress} style={[styles.basic, btnstyles]}>{text}</Button>;
 };
 
 // Dynamic Social Button

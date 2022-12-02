@@ -1,0 +1,48 @@
+[
+  {
+    "title": "The Fasters In Delivery Food",
+    "img": "https://ouch-cdn2.icons8.com/zq21zZevvyM0d2GJQar1VDj8Ih8yrsxpSucRnlDPkAU/rs:fit:456:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvODMv/YzE5MjFjOGEtMTRk/OC00OTJjLWIyZWMt/OTEwZmFkMzdkZjBi/LnN2Zw.png",
+    "bgColor": "#FCDFD9",
+    "btnText": "Order Now"
+  },
+  {
+    "title": "Black Friday Promotion",
+    "bgColor": "#14213D",
+    "color": "white",
+    "btnText": "Learn more",
+    "btnColor": "#77B342",
+    "img": "https://lapdfood.co.uk/wp-content/uploads/2021/12/banner-img.png"
+  },
+  {
+    "title": "Buy 2 Get 1 Free Delivery",
+    "bgColor": "#EAF4E1",
+    "color": "#14213D",
+    "btnText": "Food Festive",
+    "btnColor": "#77B342",
+    "img": "https://res.cloudinary.com/glovoapp/image/fetch/w_281,h_252,c_lpad,b_transparent,f_auto,q_auto:low,dpr_1.0/https://glovoapp.com/images/landing/video-burger.png"
+  },
+  {
+    "title": "Black Friday Promotion",
+    "bgColor": "#14213D",
+    "color": "white",
+    "btnText": "Learn more",
+    "btnColor": "#77B342",
+    "img": "https://lapdfood.co.uk/wp-content/uploads/2021/12/banner-img.png"
+  },
+  {
+    "title": "Buy 2 Get 1 Free Delivery",
+    "bgColor": "#EAF4E1",
+    "color": "#14213D",
+    "btnText": "Food Festive",
+    "btnColor": "#77B342",
+    "img": "https://res.cloudinary.com/glovoapp/image/fetch/w_281,h_252,c_lpad,b_transparent,f_auto,q_auto:low,dpr_1.0/https://glovoapp.com/images/landing/video-burger.png"
+  },
+  {
+    "title": "Buy 2 Get 1 Free Delivery",
+    "bgColor": "#EAF4E1",
+    "color": "#14213D",
+    "btnText": "Food Festive",
+    "btnColor": "#77B342",
+    "img": "https://res.cloudinary.com/glovoapp/image/fetch/w_281,h_252,c_lpad,b_transparent,f_auto,q_auto:low,dpr_1.0/https://glovoapp.com/images/landing/video-burger.png"
+  }
+]
