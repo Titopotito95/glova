@@ -5,7 +5,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "de51373d-db24-402d-a72e-0d49de6f0547"
+      }
+    }
   },
   "name": "news-app"
 }

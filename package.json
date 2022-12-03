@@ -7,7 +7,8 @@
     "dev": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "release-build": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/ && rm -rf android/app/src/main/res/drawable-* && rm -rf android/app/src/main/res/raw/* && cd android && ./gradlew assembleRelease && cd .."
   },
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
@@ -20,6 +21,7 @@
     "@ui-kitten/components": "^5.1.2",
     "axios": "^1.2.0",
     "expo": "~47.0.8",
+    "expo-location": "~15.0.1",
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
     "pinar": "^0.12.1",
