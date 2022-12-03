@@ -10,7 +10,6 @@ import { SCREEN_FOOD_DETAILS } from "../../../utils/screens-path";
 export default function FoodListing({ title, list, haslocation }) {
   const LocationTitleView = LocationView(title);
 
-  const navigation = useNavigation();
   return (
     <View style={{ padding: 10 }}>
       <SpacingWrapper marginVertical={10}>

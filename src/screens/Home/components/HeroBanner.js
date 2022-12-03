@@ -9,7 +9,7 @@ export default function HeroBanner({ list }) {
 
   return (
     <Carousel bounces={true} height={200} showsControls={false}>
-      {list.map((banner, index) => {
+      {list?.map((banner, index) => {
         return (
           <BannerItem
             onPress={() => navigation.navigate(SCREEN_CATALOG)}

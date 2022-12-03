@@ -13,8 +13,23 @@ import FoodListing from "./components/FoodListing";
 import foodList from "../../../content/food-list.json";
 import heroList from "../../../content/hero-banner-list.json";
 import PictureOfTheDay from "./components/PictureOfTheDay";
+import { useMutation, useQuery } from "react-query";
+import axios from "axios";
+import useGetHerobannersQuery from "../../services/data/home/use-get-herobanners.query";
+import useGetCategoryQuery from "../../services/data/home/use-get-categories.query";
+import useGetNearUserQuery from "../../services/data/home/use-get-nearyou.query";
+import useGetPopularQuery from "../../services/data/home/use-get-popular.query";
+import useGetDayPicture from "../../services/data/home/use-get-pictureoftheday.query";
 
 export default function HomeScreen() {
+  // mocked json api data
+
+  const heroBannersQuery = useGetHerobannersQuery();
+  const categoryQuery = useGetCategoryQuery();
+  const nearUserQuery = useGetNearUserQuery();
+  const popularQuery = useGetPopularQuery();
+  const pictureQuery = useGetDayPicture();
+
   return (
     <AppLayout>
       <ScrollView
@@ -25,22 +40,26 @@ export default function HomeScreen() {
           <DeliveryLocationBox />
         </SpacingWrapper>
         <SpacingWrapper>
-          <HeroBanner list={heroList} />
+          <HeroBanner list={heroBannersQuery.data} />
         </SpacingWrapper>
         <SpacingWrapper marginVertical={0}>
-          <FoodCategories />
+          <FoodCategories data={categoryQuery.data} />
         </SpacingWrapper>
         <SpacingWrapper marginVertical={0}>
-          <FoodListing list={foodList} title={"Popular Now"} />
+          <FoodListing list={popularQuery.data} title={"Popular Now"} />
         </SpacingWrapper>
         <SpacingWrapper marginVertical={20}>
           <Divider />
         </SpacingWrapper>
         <SpacingWrapper marginVertical={20}>
-          <PictureOfTheDay />
+          <PictureOfTheDay  data={pictureQuery.data}/>
         </SpacingWrapper>
         <SpacingWrapper marginVertical={0}>
-          <FoodListing list={foodList} haslocation title={"Near You"} />
+          <FoodListing
+            list={nearUserQuery.data}
+            haslocation
+            title={"Near You"}
+          />
         </SpacingWrapper>
       </ScrollView>
     </AppLayout>

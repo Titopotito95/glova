@@ -4,12 +4,15 @@ import { ImageBackground, View } from "react-native";
 import { PrimaryButton } from "../../../components/ButtonComponents";
 import SpacingWrapper from "../../../components/utils/SpacingWrapper";
 
-export default function PictureOfTheDay() {
+export default function PictureOfTheDay({ data }) {
+  if (!data?.img) {
+    return;
+  }
   return (
     <>
       <ImageBackground
         source={{
-          uri: "https://i.pinimg.com/564x/f8/f2/69/f8f269f64027d5da3f52fc10cd31d34b.jpg",
+          uri: data?.img,
         }}
         resizeMode="cover"
         style={{
