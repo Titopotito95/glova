@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "news-app",
-    "slug": "news-app",
+    "name": "glova-app",
+    "slug": "glova-app",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
@@ -12,5 +12,5 @@
       }
     }
   },
-  "name": "news-app"
+  "name": "glova-app"
 }

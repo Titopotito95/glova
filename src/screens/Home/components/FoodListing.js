@@ -7,14 +7,17 @@ import { FoodItem } from "../../../components/FoodItem";
 import { LocationView } from "../../../components/LocationView";
 import { useNavigation } from "@react-navigation/native";
 import { SCREEN_FOOD_DETAILS } from "../../../utils/screens-path";
-export default function FoodListing({ title, list, haslocation }) {
-  const LocationTitleView = LocationView(title);
-
+export default function FoodListing({
+  title,
+  list,
+  haslocation,
+  currentAddress,
+}) {
   return (
     <View style={{ padding: 10 }}>
       <SpacingWrapper marginVertical={10}>
         {haslocation ? (
-          LocationTitleView
+          <LocationView title={title} currentAddress={currentAddress} />
         ) : (
           <View>
             <Text category="h6">{title}</Text>
@@ -24,7 +27,7 @@ export default function FoodListing({ title, list, haslocation }) {
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {list?.map((item, i) => {
           return (
-            <TouchableOpacity key={i} style={{marginRight: 20}}>
+            <TouchableOpacity key={i} style={{ marginRight: 20 }}>
               <FoodItem
                 img={item?.img}
                 kind={"Cheezy Pizza"}

@@ -1,9 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
-import categoryList from "../../../../content/category-list.json";
+import list from "../../../../content/food-list.json";
 import { API_ENDPOINT } from "../../../utils/api/endpoints";
 export const fetch = async () => {
-  return categoryList;
+  return list;
 };
 
 export default function useGetPopularQuery() {

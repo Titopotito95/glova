@@ -4,8 +4,10 @@ import { TouchableOpacity, View } from "react-native";
 import { MenuIcon } from "../../../components/MenuIcon";
 import Entypo from "react-native-vector-icons/Entypo";
 import { brandColor } from "../../../utils/colors";
-
+import { useSelector } from "react-redux";
 export default function DeliveryLocationBox() {
+  const { currentAddress } = useSelector((state) => state.user);
+
   return (
     <TouchableOpacity>
       <View
@@ -30,7 +32,7 @@ export default function DeliveryLocationBox() {
               color={brandColor.primaryColor}
               name={"location-outline"}
             />
-            <Text category="s2">Accra, Ghana</Text>
+            <Text category="s2">{currentAddress}</Text>
           </View>
           <Entypo name="chevron-small-down" size={20} />
         </View>

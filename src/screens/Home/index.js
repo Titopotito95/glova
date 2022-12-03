@@ -20,15 +20,30 @@ import useGetCategoryQuery from "../../services/data/home/use-get-categories.que
 import useGetNearUserQuery from "../../services/data/home/use-get-nearyou.query";
 import useGetPopularQuery from "../../services/data/home/use-get-popular.query";
 import useGetDayPicture from "../../services/data/home/use-get-pictureoftheday.query";
+import { useSelector } from "react-redux";
+import useGetUserLocation from "../../hooks/useGetUserLocation";
+import { useRefetchOnFocus } from "../../hooks/useRefetchOnFocus";
 
 export default function HomeScreen() {
-  // mocked json api data
+  const { refreshLocation, currentAddress } = useGetUserLocation();
 
+  // mocked json api data
   const heroBannersQuery = useGetHerobannersQuery();
+  useRefetchOnFocus(heroBannersQuery.refetch);
+
   const categoryQuery = useGetCategoryQuery();
+  useRefetchOnFocus(categoryQuery.refetch);
+
   const nearUserQuery = useGetNearUserQuery();
+  useRefetchOnFocus(nearUserQuery.refetch);
+
   const popularQuery = useGetPopularQuery();
+  useRefetchOnFocus(popularQuery.refetch);
+
   const pictureQuery = useGetDayPicture();
+  useRefetchOnFocus(pictureQuery.refetch);
+
+  //   useEf
 
   return (
     <AppLayout>
@@ -52,14 +67,17 @@ export default function HomeScreen() {
           <Divider />
         </SpacingWrapper>
         <SpacingWrapper marginVertical={20}>
-          <PictureOfTheDay  data={pictureQuery.data}/>
+          <PictureOfTheDay data={pictureQuery.data} />
         </SpacingWrapper>
         <SpacingWrapper marginVertical={0}>
-          <FoodListing
-            list={nearUserQuery.data}
-            haslocation
-            title={"Near You"}
-          />
+          {currentAddress && (
+            <FoodListing
+              list={nearUserQuery.data}
+              haslocation
+              title={"Near You"}
+              currentAddress={currentAddress}
+            />
+          )}
         </SpacingWrapper>
       </ScrollView>
     </AppLayout>

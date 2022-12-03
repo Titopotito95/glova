@@ -3,7 +3,7 @@ import React from "react";
 import { TouchableOpacity, View } from "react-native";
 import FlexView from "./utils/FlexView";
 
-export function LocationView(title) {
+export function LocationView({ title, currentAddress }) {
   return (
     <FlexView
       style={{
@@ -13,7 +13,7 @@ export function LocationView(title) {
     >
       <View>
         <Text category="h6">{title}</Text>
-        <Text category="c1">AE7 Abakaliki Street</Text>
+        <Text category="c1">{currentAddress}</Text>
       </View>
       <View>
         <TouchableOpacity>
