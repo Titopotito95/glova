@@ -52,7 +52,7 @@ export default function HomeScreen() {
         showsHorizontalScrollIndicator={false}
       >
         <SpacingWrapper marginVertical={0}>
-          <DeliveryLocationBox />
+          {!pictureQuery.isLoading && <DeliveryLocationBox />}
         </SpacingWrapper>
         <SpacingWrapper>
           <HeroBanner list={heroBannersQuery.data} />
