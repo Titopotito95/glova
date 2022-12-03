@@ -5,13 +5,27 @@ import { TouchableOpacity, View } from "react-native";
 import Entypo from "react-native-vector-icons/Entypo";
 import { SCREEN_USER_PROFILE } from "../utils/screens-path";
 import { MenuIcon } from "./MenuIcon";
+import { useSelector, useDispatch } from "react-redux";
+import { addProfile, setLogin } from "../app/reducers/usersReducer";
+import authService from "../services/auth.service";
 
 export default function SidebarMenu() {
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state);
+
+  const handleLogout = () => {
+    dispatch(setLogin(false));
+    dispatch(addProfile(null));
+    authService.signout();
+  };
+
   let menuList = [
     {
       title: "My Profile",
       icon: <MenuIcon name="information-circle-outline" />,
-      screen: SCREEN_USER_PROFILE,
+      action: () => navigation.navigate(SCREEN_USER_PROFILE),
     },
     {
       title: "My Orders",
@@ -36,10 +50,10 @@ export default function SidebarMenu() {
     {
       title: "Logout",
       icon: <MenuIcon name="ios-exit-outline" />,
+      action: () => handleLogout(),
     },
   ];
 
-  const navigation = useNavigation();
   return (
     <View style={{ height: "100%", padding: 10, paddingTop: 40 }}>
       <View style={{ flexDirection: "row" }}>
@@ -53,9 +67,9 @@ export default function SidebarMenu() {
           }}
         />
         <View>
-          <Text category="h6">Obed Asante</Text>
+          <Text category="h6">{user?.profile?.name}</Text>
           <Text category="c1" status="">
-            Online
+            {user?.profile?.status}
           </Text>
         </View>
       </View>
@@ -64,9 +78,7 @@ export default function SidebarMenu() {
         {menuList.map((menu, index) => {
           return (
             <TouchableOpacity
-              onPress={() =>
-                menu?.screen ? navigation.navigate(menu?.screen) : null
-              }
+              onPress={() => (menu?.action ? menu.action() : null)}
               key={index}
             >
               <View
@@ -81,9 +93,9 @@ export default function SidebarMenu() {
                 }}
               >
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  {menu.icon}
+                  {menu?.icon}
                   <Text category="s2" style={{ fontSize: 16, marginLeft: 10 }}>
-                    {menu.title}
+                    {menu?.title}
                   </Text>
                 </View>
                 <Entypo name="chevron-small-right" size={20} />

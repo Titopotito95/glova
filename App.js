@@ -7,16 +7,25 @@ import { ApplicationProvider, Layout, Text } from "@ui-kitten/components";
 import LoginIndex from "./src/screens/Login";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import NavigationIndex from "./src/navigation";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { store } from "./src/app/store";
+import { Provider } from "react-redux";
+
 const statusBarHeight = getStatusBarHeight();
+const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <ApplicationProvider {...eva} theme={eva.light}>
-      <View style={styles.container}>
-        <StatusBar style="dark" />
-        <NavigationIndex />
-      </View>
-    </ApplicationProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <ApplicationProvider {...eva} theme={eva.light}>
+          <View style={styles.container}>
+            <StatusBar style="dark" />
+            <NavigationIndex />
+          </View>
+        </ApplicationProvider>
+      </QueryClientProvider>
+    </Provider>
   );
 }
 

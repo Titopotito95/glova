@@ -1,20 +1,20 @@
 import { Avatar, Divider, Layout, Text } from "@ui-kitten/components";
 import React from "react";
-import { ScrollView, TouchableOpacity, View } from "react-native";
-import { MenuIcon } from "../../components/MenuIcon";
+import { View } from "react-native";
 import ContainerWrapper from "../../components/utils/ContainerWrapper";
 import SpacingWrapper from "../../components/utils/SpacingWrapper";
-import { brandColor } from "../../utils/colors";
-import Entypo from "react-native-vector-icons/Entypo";
 import { TextAreaInput, TextInput } from "../../components/InputComponents";
 import { PrimaryButton } from "../../components/ButtonComponents";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import HeadTtitle from "../../components/HeadTtitle";
+import { useSelector } from "react-redux";
 
 export default function ProfileScreen() {
+  const { user } = useSelector((state) => state);
+console.log(user)
   return (
     <Layout style={{ height: "100%" }}>
-      <HeadTtitle title={'Profile'} />
+      <HeadTtitle title={"Profile"} />
       <KeyboardAwareScrollView>
         <ContainerWrapper>
           <View
@@ -38,9 +38,9 @@ export default function ProfileScreen() {
               }}
               marginVertical={10}
             >
-              <Text category="h6">Obed Asante</Text>
+              <Text category="h6">{user?.profile?.name}</Text>
               <Text category="c1" status="">
-                Online
+                {user?.profile?.status}
               </Text>
             </SpacingWrapper>
           </View>
@@ -48,9 +48,9 @@ export default function ProfileScreen() {
           <View
             style={{ padding: 10, backgroundColor: "#FEECEC", height: "100%" }}
           >
-            <TextInput placeholder={"Name"} />
-            <TextInput placeholder={"Email"} />
-            <TextAreaInput placeholder={"About"} />
+            <TextInput value={user?.profile?.name} placeholder={"Name"} />
+            <TextInput placeholder={"Email"} value={user?.profile?.email} />
+            <TextAreaInput placeholder={"About"} value={user?.profile?.about} />
             <PrimaryButton text={"Update"} />
           </View>
         </ContainerWrapper>

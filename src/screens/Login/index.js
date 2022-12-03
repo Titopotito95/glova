@@ -5,13 +5,48 @@ import { PrimaryButton } from "../../components/ButtonComponents";
 import { TextInput } from "../../components/InputComponents";
 import SocialButtons from "../../components/SocialButtons";
 import ContainerWrapper from "../../components/utils/ContainerWrapper";
-
+import useLoginMutations from "../../services/data/users/use-login.mutations";
+import { useDispatch } from "react-redux";
+import { addProfile, setLogin } from "../../app/reducers/usersReducer";
 export default function LoginIndex() {
+  const { mutate: login, isLoading } = useLoginMutations();
+  const dispatch = useDispatch();
+
+  // Attempt login user
+  const handleSubmit = (
+    email = "obed.wordpress@gmail.com",
+    password = "password"
+  ) => {
+    login(
+      {
+        variables: {
+          email,
+          password,
+        },
+      },
+      {
+        onSuccess: () => {
+          dispatch(setLogin(true));
+          dispatch(
+            addProfile({
+              email: email,
+              name: "Obed Asante",
+              status: "online",
+              about: "Meta verse",
+            })
+          );
+        },
+        onError: (err) => {
+          console.log(err);
+        },
+      }
+    );
+  };
   return (
     <ContainerWrapper>
       <View
         style={{
-        //   backgroundColor: "#e5e8f1",
+          //   backgroundColor: "#e5e8f1",
           height: "100%",
           paddingTop: 10,
         }}
@@ -37,7 +72,11 @@ export default function LoginIndex() {
         </View>
         {/* Login Button */}
         <View style={styles.loginWrapper}>
-          <PrimaryButton text={"Sign In"} />
+          <PrimaryButton
+            text={"Sign In"}
+            loading={isLoading}
+            onPress={() => handleSubmit()}
+          />
         </View>
         {/* Alt text */}
         <View style={styles.loginWrapper}>

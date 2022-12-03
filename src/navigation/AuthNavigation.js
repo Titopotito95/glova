@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginIndex from "../screens/Login";
-import { SCREEN_LOGIN } from "../utils/screens-path";
+import { SCREENS, SCREEN_LOGIN } from "../utils/screens-path";
 const Stack = createNativeStackNavigator();
 
 export default function AuthNavigation() {
@@ -11,7 +11,7 @@ export default function AuthNavigation() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name={SCREEN_LOGIN} component={LoginIndex} />
+      <Stack.Screen name={SCREENS.LOGIN} component={LoginIndex} />
     </Stack.Navigator>
   );
 }

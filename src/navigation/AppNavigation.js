@@ -1,24 +1,20 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { Button, View } from "react-native";
-import HomeScreen from "../screens/Home";
 import SidebarMenu from "../components/SidebarMenu";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MainAppNavigation from "./MainAppNavigation";
-import { SCREEN_MAIN_APP, SCREEN_USER_PROFILE } from "../utils/screens-path";
-import ProfileScreen from "../screens/Profile";
+import { SCREENS } from "../utils/screens-path";
 const Drawer = createDrawerNavigator();
 
 export default function AppNavigation() {
   return (
     <Drawer.Navigator
-      drawerContent={SidebarMenu}
+      drawerContent={(props) => <SidebarMenu {...props} />}
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={SCREEN_MAIN_APP}
+      initialRouteName={SCREENS.MAIN_APP}
     >
-      <Drawer.Screen name={SCREEN_MAIN_APP} component={MainAppNavigation} />
+      <Drawer.Screen name={SCREENS.MAIN_APP} component={MainAppNavigation} />
     </Drawer.Navigator>
   );
 }
