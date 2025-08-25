@@ -1,7 +1,6 @@
 import { Layout, Text } from "@ui-kitten/components";
 import React from "react";
 import { ScrollView, TouchableOpacity, View } from "react-native";
-import Carousel from "pinar";
 import SpacingWrapper from "../../../components/utils/SpacingWrapper";
 import { FoodItem } from "../../../components/FoodItem";
 import { LocationView } from "../../../components/LocationView";

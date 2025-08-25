@@ -1,7 +1,6 @@
 import { Text } from "@ui-kitten/components";
 import React from "react";
 import { ScrollView, View } from "react-native";
-import Carousel from "pinar";
 import { CategoryTag } from "../../../components/CategoryTag";
 export default function FoodCategories({ data }) {
   return (
