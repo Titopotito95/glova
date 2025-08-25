@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Glova App",
-    "slug": "glova-app", 
+    "slug": "glova-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,12 +24,9 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
-    "extra": {
-      "eas": {
-        "projectId": "de51373d-db24-402d-a72e-0d49de6f0547"
-      }
-    }
+    "platforms": ["ios", "android", "web"]
   }
 }
