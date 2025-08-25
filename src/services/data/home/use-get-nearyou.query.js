@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import foodlist from "../../../../content/food-list.json";
 import { API_ENDPOINT } from "../../../utils/api/endpoints";
 export const fetch = async () => {

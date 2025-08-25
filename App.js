@@ -7,7 +7,7 @@ import { ApplicationProvider, Layout, Text } from "@ui-kitten/components";
 import LoginIndex from "./src/screens/Login";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import NavigationIndex from "./src/navigation";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { store } from "./src/app/store";
 import { Provider } from "react-redux";
 
