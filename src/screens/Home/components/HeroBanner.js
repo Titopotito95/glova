@@ -1,23 +1,34 @@
 import React from "react";
-import Carousel from "pinar";
+import { ScrollView, Dimensions } from "react-native";
 import { BannerItem } from "../../../components/BannerItem";
 import { useNavigation } from "@react-navigation/native";
 import { SCREEN_CATALOG } from "../../../utils/screens-path";
 
+const { width } = Dimensions.get('window');
+
 export default function HeroBanner({ list }) {
   const navigation = useNavigation();
 
+  if (!list || list.length === 0) {
+    return null;
+  }
+
   return (
-    <Carousel bounces={true} height={200} showsControls={false}>
-      {list?.map((banner, index) => {
+    <ScrollView 
+      horizontal 
+      pagingEnabled
+      showsHorizontalScrollIndicator={false}
+      style={{ height: 200 }}
+    >
+      {list.map((banner, index) => {
         return (
           <BannerItem
+            key={index}
             onPress={() => navigation.navigate(SCREEN_CATALOG)}
             data={banner}
-            key={index}
           />
         );
       })}
-    </Carousel>
+    </ScrollView>
   );
 }
