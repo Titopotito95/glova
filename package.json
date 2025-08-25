@@ -35,7 +35,8 @@
     "react-native-svg": "14.1.0",
     "axios": "^1.6.0",
     "lodash": "^4.17.21",
-    "@react-native-async-storage/async-storage": "1.21.0"
+    "@react-native-async-storage/async-storage": "1.21.0",
+    "pinar": "^3.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
