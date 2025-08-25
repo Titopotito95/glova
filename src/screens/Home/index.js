@@ -13,7 +13,7 @@ import FoodListing from "./components/FoodListing";
 import foodList from "../../../content/food-list.json";
 import heroList from "../../../content/hero-banner-list.json";
 import PictureOfTheDay from "./components/PictureOfTheDay";
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import useGetHerobannersQuery from "../../services/data/home/use-get-herobanners.query";
 import useGetCategoryQuery from "../../services/data/home/use-get-categories.query";
